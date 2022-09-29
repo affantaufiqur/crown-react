@@ -27,17 +27,14 @@ const SignInForm = () => {
   }
 
   const loginGoogleUser = async () => {
-    const { user } = await signInWithGooglePopup()
-    await createUserDocument(user)
+    await signInWithGooglePopup()
   }
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-
     try {
-      const response = await signInUserWithEmailAndPassword(email, password)
+      const { user } = await signInUserWithEmailAndPassword(email, password)
       resetFormFields()
-      return response
     } catch (error) {
       switch (error.code) {
         case 'auth/user-not-found':
