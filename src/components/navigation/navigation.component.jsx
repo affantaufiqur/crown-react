@@ -1,7 +1,7 @@
 import { Fragment, useContext } from 'react'
 import { Outlet } from 'react-router-dom'
 import Logo from '../../assets/crown.svg'
-import { NavigationContainer, NavLink, NavLinks, LogoContainer } from './navigation.styles.jsx'
+import { NavigationContainer, NavLink, NavLinks, LogoContainer } from './navigation.styles'
 import { UserContext } from '../../context/user.context'
 import { signUserOut } from '../../utils/firebase/firebase.utils'
 import { CartContext } from '../../context/cart.context'
